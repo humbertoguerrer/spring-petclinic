@@ -30,7 +30,7 @@ pipeline {
         stage('Run') {
             steps {
                 sh 'java -jar target/spring-petclinic-4.0.0-SNAPSHOT.jar --server.port=8081 & sleep 10'
-                sh 'curl -I http://localhost:8081'
+                sh 'curl -f http://localhost:8081/owners'
             }
         }
     }
