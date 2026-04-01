@@ -26,6 +26,12 @@ pipeline {
                 sh 'test -f target/spring-petclinic-4.0.0-SNAPSHOT.jar'
             }
         }
+
+        stage('Run') {
+            steps {
+                sh 'java -jar target/spring-petclinic-4.0.0-SNAPSHOT.jar & sleep 10'
+            }
+        }
     }
 
     post {
