@@ -23,7 +23,7 @@ pipeline {
         stage('Package') {
             steps {
                 sh 'mvn package -DSkiptTests'
-                sh sleep 2
+                sh 'sleep 2'
             }
         }
     }
