@@ -19,6 +19,13 @@ pipeline {
                 sh 'mvn test'
             }
         }
+
+        stage('Package') {
+            steps {
+                sh 'mvn package -DSkiptTests'
+                sh sleep 2
+            }
+        }
     }
 
     post {
