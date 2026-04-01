@@ -82,7 +82,7 @@ public class Owner extends Person {
 		this.city = city;
 	}
 
-// comentário de teste
+	// comentário de teste
 
 	public String getTelephone() {
 		return this.telephone;
