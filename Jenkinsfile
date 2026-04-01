@@ -10,20 +10,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean -DskipTests compile'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-
-        stage('Package') {
-            steps {
-                sh 'mvn package -DSkiptTests'
-                sh 'sleep 2'
+                sh 'mvn clean package'
             }
         }
     }
