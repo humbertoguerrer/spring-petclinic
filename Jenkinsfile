@@ -10,7 +10,20 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn clean -DskipTests compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                sh 'mvn package -DSkiptTests'
+                sh 'test -f target/spring-petclinic-4.0.0-SNAPSHOT.jar'
             }
         }
     }
