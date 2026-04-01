@@ -2,7 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Build & Test') {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean -DskipTests compile'
+            }
+        }
+
+        stage('Test') {
             steps {
                 sh 'mvn test'
             }
